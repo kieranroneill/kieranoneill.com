@@ -8,6 +8,7 @@
   "license": "See LICENSE.md",
   "private": true,
   "scripts": {
+    "build": "node_modules/.bin/webpack --config \"webpack/webpack.config.ts\"",
     "lint": "eslint \"src/\" --ext .js,.ts,.tsx",
     "prettier": "node_modules/.bin/prettier --write \"src/**/*.{js,json,ts,tsx}\"",
     "start:dev": "node_modules/.bin/webpack-dev-server --config \"webpack/webpack.dev.config.ts\" --progress"
