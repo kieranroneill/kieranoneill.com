@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "repository": "https://kieranoneill.com",
   "author": "Kieran O'Neill <kieran.oneill@protonmail.com>",
-  "license": "See LICENCE.md",
+  "license": "See LICENSE.md",
   "private": true,
   "scripts": {
     "lint": "eslint \"src/\" --ext .js,.ts,.tsx",
