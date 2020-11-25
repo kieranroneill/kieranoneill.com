@@ -1,4 +1,4 @@
-![](https://github.com/kieranroneill/kieranoneill.com/workflows/Deployment/badge.svg)
+[![Deployment Status](https://github.com/kieranroneill/kieranoneill.com/workflows/Deployment/badge.svg)](https://github.com/kieranroneill/kieranoneill.com/actions)
 
 # Kieran O'Neill - the website
 
@@ -6,7 +6,7 @@
 
 * [Development](#development)
     * [1. Setting up the dev environment](#1-setting-up-the-dev-environment)
-    * [2. Running locally](#3-running-locally)
+    * [2. Running locally](#2-running-locally)
 
 ## Development
 
@@ -24,7 +24,7 @@ yarn install
 
 1. Start the web server:
 ```shell script
-yarn start:dev
+yarn start
 ```
 
 2. Navigate to [http://localhost:1337](http://localhost:1337).
