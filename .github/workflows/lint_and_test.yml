@@ -2,7 +2,8 @@ name: Lint and test
 on:
   push:
     branches-ignore:
-      - master
+      - main
+
 jobs:
   lint-and-test:
     runs-on: ubuntu-latest
