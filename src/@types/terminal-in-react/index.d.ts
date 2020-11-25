@@ -26,7 +26,7 @@ declare module 'terminal-in-react' {
     checkVersion: (comparator: string, version: string) => boolean;
     focusInput: () => void;
     getData: () => Data;
-    getPluginMethod: (pluginName: string, methodName: string) => Function;
+    getPluginMethod: (pluginName: string, methodName: string) => any;
     os: string;
     printLine: (content: string | JSX) => void;
     releaseControl: () => void;

@@ -25,7 +25,7 @@ const Helmet: React.FC<Props> = ({ title = Titles.DEFAULT }: Props) => {
       <meta name="og:description" content={description} />
       <meta name="og:image" content={image} />
       <meta name="og:title" content={title} />
-      <meta name="og:type" content={'website'} />
+      <meta name="og:type" content="website" />
       <meta name="og:url" content={url} />
     </ReactHelmet>
   );

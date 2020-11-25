@@ -8,6 +8,11 @@ module.exports = {
     'plugin:react/recommended',
     'prettier/@typescript-eslint',
   ],
+  rules: {
+    '@typescript-eslint/no-inferrable-types': 'off',
+    '@typescript-eslint/no-namespace': ['error', { allowDeclarations: true }],
+    'prefer-const': 'off',
+  },
   settings: {
     react: {
       version: 'detect',
