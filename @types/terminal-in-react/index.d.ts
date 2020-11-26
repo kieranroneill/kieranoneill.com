@@ -4,7 +4,7 @@ declare module 'terminal-in-react' {
 
   export interface Arguments {
     _: string[];
-    [key: string]: string;
+    [key: string]: any;
   }
   export type CommandFunction = (
     args: Arguments,
@@ -16,7 +16,7 @@ declare module 'terminal-in-react' {
     options?: CommandOptions[];
   }
   export interface CommandOptions {
-    defaultValue: string;
+    defaultValue: any;
     description: string;
     name: string;
   }
