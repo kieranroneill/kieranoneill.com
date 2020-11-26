@@ -1,4 +1,5 @@
 import autoprefixer from 'autoprefixer';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 import FaviconsWebpackPlugin from 'favicons-webpack-plugin';
 import { resolve } from 'path';
 import { Configuration, LoaderOptionsPlugin } from 'webpack';
@@ -44,6 +45,14 @@ const commonConfig: Partial<Configuration> = {
   },
 
   plugins: [
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: resolve(WebpackConstants.SRC_PATH, 'docs'),
+          to: resolve(WebpackConstants.DIST_PATH, 'docs'),
+        },
+      ],
+    }),
     new FaviconsWebpackPlugin({
       logo: resolve(WebpackConstants.SRC_PATH, 'favicon.png'),
     }),
