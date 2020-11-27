@@ -22,9 +22,9 @@ jobs:
           registry-url: https://npm.pkg.github.com/
           scope: '@kieranroneill'
       - name: "Install 📦"
-        run: npm ci
+        run: yarn install --frozen-lockfile
         env:
           CI: true
           NODE_AUTH_TOKEN: ${{ secrets.PAT }}
       - name: "Lint 👕"
-        run: npm run lint
+        run: yarn lint

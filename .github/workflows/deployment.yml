@@ -22,7 +22,7 @@ jobs:
           registry-url: https://npm.pkg.github.com/
           scope: '@kieranroneill'
       - name: "Install 📦"
-        run: npm install
+        run: yarn install --frozen-lockfile
         env:
           NODE_AUTH_TOKEN: ${{ secrets.PAT }}
       - name: "Build ⛏"
