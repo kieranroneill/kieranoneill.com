@@ -1,6 +1,9 @@
 import React, { createRef, useEffect, useState } from 'react';
 import styled from 'styled-components';
 
+// Components.
+import { Button } from '../Button';
+
 // Constants.
 import { GameConstants } from './constants';
 
@@ -17,7 +20,7 @@ interface IProps {
 const height: number = 570;
 const width: number = 760;
 
-const StyledButton = styled.button`
+const StyledButton = styled(Button)`
   margin: 2rem 0 0;
 `;
 const Container = styled.div`
