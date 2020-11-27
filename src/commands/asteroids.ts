@@ -2,7 +2,7 @@ import { Dispatch, SetStateAction } from 'react';
 import { Command } from '@kieranroneill/terminal-in-react';
 
 // Constants.
-import { Descriptions } from '../../../constants';
+import { Descriptions } from '../constants';
 
 // Descriptions.
 import { asteroidsDescription } from '../descriptions';

@@ -5,11 +5,11 @@ import Terminal from '@kieranroneill/terminal-in-react';
 // Commands.
 import {
   getAsteroidsCmd,
-  cvCommand,
-  githubCommand,
-  linkedinCommand,
-  twitterCommand,
-} from './commands';
+  getCVCmd,
+  getGithubCmd,
+  getLinkedInCmd,
+  getTwitterCmd,
+} from '../../commands';
 
 // Components.
 import AsteroidsGame from '../AsteroidsGame';
@@ -23,7 +23,7 @@ import {
   githubDescription,
   linkedinDescription,
   twitterDescription,
-} from './descriptions';
+} from '../../descriptions';
 
 const msg: string = `Welcome to
     __   _                                        _ ____
@@ -56,10 +56,10 @@ const App: React.FC = () => {
           color="green"
           commands={{
             asteroids: getAsteroidsCmd(setAsteroidsOpen),
-            cv: cvCommand,
-            github: githubCommand,
-            linkedin: linkedinCommand,
-            twitter: twitterCommand,
+            cv: getCVCmd(),
+            github: getGithubCmd(),
+            linkedin: getLinkedInCmd(),
+            twitter: getTwitterCmd(),
           }}
           descriptions={{
             asteroids: asteroidsDescription,
