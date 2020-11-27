@@ -1,5 +1,5 @@
-import { Dispatch, SetStateAction } from 'react';
 import { Command } from '@kieranroneill/terminal-in-react';
+import { Dispatch, SetStateAction } from 'react';
 
 // Constants.
 import { Descriptions } from '../constants';

@@ -5,7 +5,7 @@ import { AsteroidConstants, GameConstants, ShipConstants } from './constants';
 import { Asteroid, Explosion, Ship } from './models';
 
 // Themes.
-import palette from '../../theme/palette';
+import { palette } from '../../theme';
 
 // Utils.
 import { isLocalStorageAvailable } from '../../utils';

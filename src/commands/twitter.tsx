@@ -1,5 +1,5 @@
-import React from 'react';
 import { Command } from '@kieranroneill/terminal-in-react';
+import React from 'react';
 
 // Constants.
 import { Descriptions, Links } from '../constants';

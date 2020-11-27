@@ -2,7 +2,7 @@
 import { GameConstants, ShipConstants } from '../constants';
 
 // Themes.
-import palette from '../../../theme/palette';
+import { palette, typography } from '../../../theme';
 
 export default function drawScore(
   ctx: CanvasRenderingContext2D,
@@ -12,7 +12,7 @@ export default function drawScore(
   ctx.textAlign = 'right';
   ctx.textBaseline = 'middle';
   ctx.fillStyle = palette.greyScale.white;
-  ctx.font = `${GameConstants.FONT_SIZE}px ${GameConstants.FONT_TYPE}`;
+  ctx.font = `${GameConstants.FONT_SIZE}px ${typography.primaryFontFamily}`;
   ctx.fillText(
     `Score: ${score.toString()}`,
     width - ShipConstants.SIZE / 2,

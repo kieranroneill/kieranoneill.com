@@ -1,6 +1,6 @@
+import Terminal from '@kieranroneill/terminal-in-react';
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import Terminal from '@kieranroneill/terminal-in-react';
 
 // Commands.
 import {
@@ -73,6 +73,9 @@ const App: React.FC = () => {
           promptSymbol="$ "
           showActions={false}
           startState="maximised"
+          style={{
+            display: asteroidsOpen ? 'none' : 'block',
+          }}
         />
       </WrapComponent>
     </>

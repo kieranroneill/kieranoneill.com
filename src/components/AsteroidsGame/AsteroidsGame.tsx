@@ -8,7 +8,7 @@ import { GameConstants } from './constants';
 import Game from './Game';
 
 // Themes.
-import palette from '../../theme/palette';
+import { palette } from '../../theme';
 
 interface IProps {
   onClose?: () => void;
