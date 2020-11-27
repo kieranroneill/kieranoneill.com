@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import Terminal, {
   Commands,
@@ -14,6 +14,7 @@ import {
 } from './commands';
 
 // Components.
+import AsteroidsGame from '../AsteroidsGame';
 import GlobalStyle from '../GlobalStyle';
 import Helmet from '../Helmet';
 
@@ -52,25 +53,32 @@ const descriptions: Descriptions = {
   twitter: twitterDescription,
 };
 
-const App: React.FC = () => (
-  <>
-    <GlobalStyle />
-    <Helmet />
-    <WrapComponent>
-      <Terminal
-        allowTabs={false}
-        backgroundColor="black"
-        color="green"
-        commands={commands}
-        descriptions={descriptions}
-        hideTopBar={true}
-        msg={msg}
-        promptSymbol="$ "
-        showActions={false}
-        startState="maximised"
-      />
-    </WrapComponent>
-  </>
-);
+const App: React.FC = () => {
+  const [asteroidsOpen, setAsteroidsOpen] = useState<boolean>(false);
+
+  return (
+    <>
+      <GlobalStyle />
+      <Helmet />
+      {asteroidsOpen && (
+        <AsteroidsGame onClose={() => setAsteroidsOpen(false)} />
+      )}
+      <WrapComponent>
+        <Terminal
+          allowTabs={false}
+          backgroundColor="black"
+          color="green"
+          commands={commands}
+          descriptions={descriptions}
+          hideTopBar={true}
+          msg={msg}
+          promptSymbol="$ "
+          showActions={false}
+          startState="maximised"
+        />
+      </WrapComponent>
+    </>
+  );
+};
 
 export default App;
