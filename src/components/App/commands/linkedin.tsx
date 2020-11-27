@@ -26,7 +26,7 @@ const cmd: Command = {
 
     if (args.l || args.link) {
       print(
-        <a href={Links.LINKEDIN} target="_blank">
+        <a href={Links.LINKEDIN} rel="noreferrer" target="_blank">
           {Links.LINKEDIN}
         </a>
       );

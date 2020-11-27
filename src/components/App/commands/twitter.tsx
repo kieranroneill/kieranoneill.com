@@ -26,7 +26,7 @@ const cmd: Command = {
 
     if (args.l || args.link) {
       print(
-        <a href={Links.TWITTER} target="_blank">
+        <a href={Links.TWITTER} rel="noreferrer" target="_blank">
           {Links.TWITTER}
         </a>
       );
