@@ -1,29 +1,29 @@
-import React from 'react';
+import Terminal from '@kieranroneill/terminal-in-react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
-import Terminal, {
-  Commands,
-  Descriptions,
-} from '@kieranroneill/terminal-in-react';
 
 // Commands.
 import {
-  cvCommand,
-  githubCommand,
-  linkedinCommand,
-  twitterCommand,
-} from './commands';
+  getAsteroidsCmd,
+  getCVCmd,
+  getGithubCmd,
+  getLinkedInCmd,
+  getTwitterCmd,
+} from '../../commands';
 
 // Components.
+import AsteroidsGame from '../AsteroidsGame';
 import GlobalStyle from '../GlobalStyle';
 import Helmet from '../Helmet';
 
 // Descriptions.
 import {
+  asteroidsDescription,
   cvDescription,
   githubDescription,
   linkedinDescription,
   twitterDescription,
-} from './descriptions';
+} from '../../descriptions';
 
 const msg: string = `Welcome to
     __   _                                        _ ____
@@ -39,38 +39,47 @@ const WrapComponent = styled.div`
   height: 100vh;
 `;
 
-const commands: Commands = {
-  cv: cvCommand,
-  github: githubCommand,
-  linkedin: linkedinCommand,
-  twitter: twitterCommand,
-};
-const descriptions: Descriptions = {
-  cv: cvDescription,
-  github: githubDescription,
-  linkedin: linkedinDescription,
-  twitter: twitterDescription,
-};
+const App: React.FC = () => {
+  const [asteroidsOpen, setAsteroidsOpen] = useState<boolean>(false);
 
-const App: React.FC = () => (
-  <>
-    <GlobalStyle />
-    <Helmet />
-    <WrapComponent>
-      <Terminal
-        allowTabs={false}
-        backgroundColor="black"
-        color="green"
-        commands={commands}
-        descriptions={descriptions}
-        hideTopBar={true}
-        msg={msg}
-        promptSymbol="$ "
-        showActions={false}
-        startState="maximised"
-      />
-    </WrapComponent>
-  </>
-);
+  return (
+    <>
+      <GlobalStyle />
+      <Helmet />
+      {asteroidsOpen && (
+        <AsteroidsGame onClose={() => setAsteroidsOpen(false)} />
+      )}
+      <WrapComponent>
+        <Terminal
+          allowTabs={false}
+          backgroundColor="black"
+          color="green"
+          commands={{
+            asteroids: getAsteroidsCmd(setAsteroidsOpen),
+            cv: getCVCmd(),
+            github: getGithubCmd(),
+            linkedin: getLinkedInCmd(),
+            twitter: getTwitterCmd(),
+          }}
+          descriptions={{
+            asteroids: asteroidsDescription,
+            cv: cvDescription,
+            github: githubDescription,
+            linkedin: linkedinDescription,
+            twitter: twitterDescription,
+          }}
+          hideTopBar={true}
+          msg={msg}
+          promptSymbol="$ "
+          showActions={false}
+          startState="maximised"
+          style={{
+            display: asteroidsOpen ? 'none' : 'block',
+          }}
+        />
+      </WrapComponent>
+    </>
+  );
+};
 
 export default App;
