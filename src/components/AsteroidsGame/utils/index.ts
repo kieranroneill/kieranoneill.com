@@ -1,0 +1,13 @@
+export { default as createAsteroidBelt } from './createAsteroidBelt';
+export { default as distanceBetweenPoints } from './distanceBetweenPoints';
+export { default as drawAsteroid } from './drawAsteroid';
+export { default as drawBasicShip } from './drawBasicShip';
+export { default as drawExplosion } from './drawExplosion';
+export { default as drawHighScore } from './drawHighScore';
+export { default as drawLaser } from './drawLaser';
+export { default as drawScore } from './drawScore';
+export { default as drawShip } from './drawShip';
+export { default as drawSpace } from './drawSpace';
+export { default as drawText } from './drawText';
+export { default as moveAsteroids } from './moveAsteroids';
+export { default as moveLasers } from './moveLasers';
