@@ -1,3 +1,4 @@
+import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { resolve } from 'path';
 import { Configuration, DefinePlugin } from 'webpack';
@@ -22,7 +23,7 @@ const config: Partial<Configuration> = merge(commonConfig, {
           chunks: 'initial',
           enforce: true,
           name: 'vendor',
-          test: /react|react-dom/,
+          test: /react|react-dom|styled-components/,
         },
       },
     },
@@ -35,6 +36,7 @@ const config: Partial<Configuration> = merge(commonConfig, {
   },
 
   plugins: [
+    new CleanWebpackPlugin(),
     new DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('production'),

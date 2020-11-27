@@ -1,10 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
-import Terminal from 'terminal-in-react';
+import Terminal, {
+  Commands,
+  Descriptions,
+} from '@kieranroneill/terminal-in-react';
+
+// Commands.
+import { cvCommand } from './commands';
 
 // Components.
 import GlobalStyle from '../GlobalStyle';
 import Helmet from '../Helmet';
+
+// Descriptions.
+import { cvDescription } from './descriptions';
 
 const msg: string = `Welcome to
     __   _                                        _ ____
@@ -20,6 +29,13 @@ const WrapComponent = styled.div`
   height: 100vh;
 `;
 
+const commands: Commands = {
+  cv: cvCommand,
+};
+const descriptions: Descriptions = {
+  cv: cvDescription,
+};
+
 const App: React.FC = () => (
   <>
     <GlobalStyle />
@@ -29,6 +45,8 @@ const App: React.FC = () => (
         allowTabs={false}
         backgroundColor="black"
         color="green"
+        commands={commands}
+        descriptions={descriptions}
         hideTopBar={true}
         msg={msg}
         promptSymbol="$ "
