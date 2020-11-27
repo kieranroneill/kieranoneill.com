@@ -4,12 +4,19 @@ import {
   GlobalStyleComponent,
 } from 'styled-components';
 
+// Components.
+import RollAnimation from '../RollAnimation';
+
 const GlobalStyle: GlobalStyleComponent<
   unknown,
   DefaultTheme
 > = createGlobalStyle`
   body {
     margin: 0;
+
+    &.roll {
+      animation: 3000ms forwards ${RollAnimation};
+    }
   }
 
   body,
