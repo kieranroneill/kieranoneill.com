@@ -1,4 +1,4 @@
-declare module 'terminal-in-react' {
+declare module '@kieranroneill/terminal-in-react' {
   import Component = React.Component;
   import CSSProperties = React.CSSProperties;
 

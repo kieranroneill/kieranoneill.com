@@ -1,6 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import Terminal, { Commands, Descriptions } from 'terminal-in-react';
+import Terminal, {
+  Commands,
+  Descriptions,
+} from '@kieranroneill/terminal-in-react';
 
 // Commands.
 import { cvCommand } from './commands';

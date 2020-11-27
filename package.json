@@ -22,11 +22,11 @@
     "test": "jest --config=test/jest.config.js"
   },
   "dependencies": {
+    "@kieranroneill/terminal-in-react": "^4.3.7",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0",
-    "styled-components": "^5.1.1",
-    "terminal-in-react": "^4.3.1"
+    "styled-components": "^5.1.1"
   },
   "devDependencies": {
     "@types/autoprefixer": "^9.7.2",

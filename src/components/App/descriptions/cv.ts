@@ -1,3 +1,3 @@
-const cv: string = 'View my CV!';
+const cv: string = 'View (or download) my CV!';
 
 export default cv;
