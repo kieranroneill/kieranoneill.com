@@ -30,7 +30,6 @@ const GlobalStyle: GlobalStyleComponent<
 
   a {
     cursor: pointer;
-    text-decoration: none;
     transition: all 300ms ease-in-out;
   }
 `;

@@ -1,3 +1,4 @@
+import React from 'react';
 import { Command } from '@kieranroneill/terminal-in-react';
 
 // Constants.
@@ -24,7 +25,11 @@ const cmd: Command = {
     }
 
     if (args.l || args.link) {
-      print(Links.LINKEDIN);
+      print(
+        <a href={Links.LINKEDIN} target="_blank">
+          {Links.LINKEDIN}
+        </a>
+      );
 
       return;
     }

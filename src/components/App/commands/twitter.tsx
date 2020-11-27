@@ -1,14 +1,15 @@
+import React from 'react';
 import { Command } from '@kieranroneill/terminal-in-react';
 
 // Constants.
 import { Descriptions, Links } from '../../../constants';
 
 // Descriptions.
-import { githubDescription } from '../descriptions';
+import { twitterDescription } from '../descriptions';
 
 const helpDescription: string = `
-Usage: github [OPTION]...
-${githubDescription}
+Usage: twitter [OPTION]...
+${twitterDescription}
 
 Mandatory arguments to long options are mandatory for short options too.
   -h, --help      ${Descriptions.HELP_OPTION}
@@ -24,12 +25,16 @@ const cmd: Command = {
     }
 
     if (args.l || args.link) {
-      print(Links.GITHUB);
+      print(
+        <a href={Links.TWITTER} target="_blank">
+          {Links.TWITTER}
+        </a>
+      );
 
       return;
     }
 
-    window.open(Links.GITHUB, '_blank');
+    window.open(Links.TWITTER, '_blank');
 
     return;
   },
