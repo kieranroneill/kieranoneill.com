@@ -28,7 +28,7 @@ declare module '@kieranroneill/terminal-in-react' {
     getData: () => Data;
     getPluginMethod: (pluginName: string, methodName: string) => any;
     os: string;
-    printLine: (content: string | JSX) => void;
+    printLine: (content: string | React.ReactElement) => void;
     releaseControl: () => void;
     removeLine: (lineNumber?: number) => void;
     runCommand: (cmdText: string, force?: boolean) => void;
@@ -44,7 +44,7 @@ declare module '@kieranroneill/terminal-in-react' {
     ) => void;
     version: string;
   }
-  export type PrintFunction = (input: string) => void;
+  export type PrintFunction = (input: string | React.ReactElement) => void;
   export type RunCommand = (cmd: string) => void;
   export type Shortcut = Record<string, string>;
   export interface Shortcuts {
