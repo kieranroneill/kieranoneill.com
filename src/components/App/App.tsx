@@ -6,14 +6,24 @@ import Terminal, {
 } from '@kieranroneill/terminal-in-react';
 
 // Commands.
-import { cvCommand } from './commands';
+import {
+  cvCommand,
+  githubCommand,
+  linkedinCommand,
+  twitterCommand,
+} from './commands';
 
 // Components.
 import GlobalStyle from '../GlobalStyle';
 import Helmet from '../Helmet';
 
 // Descriptions.
-import { cvDescription } from './descriptions';
+import {
+  cvDescription,
+  githubDescription,
+  linkedinDescription,
+  twitterDescription,
+} from './descriptions';
 
 const msg: string = `Welcome to
     __   _                                        _ ____
@@ -31,9 +41,15 @@ const WrapComponent = styled.div`
 
 const commands: Commands = {
   cv: cvCommand,
+  github: githubCommand,
+  linkedin: linkedinCommand,
+  twitter: twitterCommand,
 };
 const descriptions: Descriptions = {
   cv: cvDescription,
+  github: githubDescription,
+  linkedin: linkedinDescription,
+  twitter: twitterDescription,
 };
 
 const App: React.FC = () => (
