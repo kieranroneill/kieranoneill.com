@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import Terminal, {
-  Commands,
-  Descriptions,
-} from '@kieranroneill/terminal-in-react';
+import Terminal from '@kieranroneill/terminal-in-react';
 
 // Commands.
 import {
+  getAsteroidsCmd,
   cvCommand,
   githubCommand,
   linkedinCommand,
@@ -20,6 +18,7 @@ import Helmet from '../Helmet';
 
 // Descriptions.
 import {
+  asteroidsDescription,
   cvDescription,
   githubDescription,
   linkedinDescription,
@@ -40,19 +39,6 @@ const WrapComponent = styled.div`
   height: 100vh;
 `;
 
-const commands: Commands = {
-  cv: cvCommand,
-  github: githubCommand,
-  linkedin: linkedinCommand,
-  twitter: twitterCommand,
-};
-const descriptions: Descriptions = {
-  cv: cvDescription,
-  github: githubDescription,
-  linkedin: linkedinDescription,
-  twitter: twitterDescription,
-};
-
 const App: React.FC = () => {
   const [asteroidsOpen, setAsteroidsOpen] = useState<boolean>(false);
 
@@ -68,8 +54,20 @@ const App: React.FC = () => {
           allowTabs={false}
           backgroundColor="black"
           color="green"
-          commands={commands}
-          descriptions={descriptions}
+          commands={{
+            asteroids: getAsteroidsCmd(setAsteroidsOpen),
+            cv: cvCommand,
+            github: githubCommand,
+            linkedin: linkedinCommand,
+            twitter: twitterCommand,
+          }}
+          descriptions={{
+            asteroids: asteroidsDescription,
+            cv: cvDescription,
+            github: githubDescription,
+            linkedin: linkedinDescription,
+            twitter: twitterDescription,
+          }}
           hideTopBar={true}
           msg={msg}
           promptSymbol="$ "
