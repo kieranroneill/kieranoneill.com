@@ -7,10 +7,11 @@
     "noImplicitReturns": true,
     "noImplicitThis": true,
     "noUnusedLocals": true,
+    "resolveJsonModule": true,
     "suppressImplicitAnyIndexErrors": true,
     "target": "es5",
-    "typeRoots": ["node_modules/@types", "@types"]
+    "typeRoots": ["node_modules/@types", "webpack/@types"]
   },
   "exclude": ["dist", "node_modules", "src/**/*", "test"],
-  "include": ["webpack/**/*"]
+  "include": ["webpack/**/*", "package.json"]
 }
