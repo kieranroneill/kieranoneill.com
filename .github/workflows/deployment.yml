@@ -2,8 +2,7 @@ name: Deployment
 
 on:
   release:
-    types: [released]
-
+    types: [created]
 
 jobs:
   deploy:
@@ -25,7 +24,7 @@ jobs:
       - name: "Install 📦"
         run: yarn install --frozen-lockfile
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.PAT }}
+          NODE_AUTH_TOKEN: ${{ secrets.PAT_PACKAGES }}
       - name: "Build ⛏"
         run: yarn build
       - name: "Deploy 🚀"

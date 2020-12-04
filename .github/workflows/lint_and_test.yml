@@ -23,7 +23,7 @@ jobs:
         run: yarn install --frozen-lockfile
         env:
           CI: true
-          NODE_AUTH_TOKEN: ${{ secrets.PAT }}
+          NODE_AUTH_TOKEN: ${{ secrets.PAT_PACKAGES }}
       - name: "Lint 👕"
         run: yarn lint
       - name: "Test 🚨"
