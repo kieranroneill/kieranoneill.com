@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/kieranroneill/kieranoneill.com/compare/v1.0.0...v1.1.0) (2020-12-04)
+
+
+### Features
+
+* Add version command ([#12](https://github.com/kieranroneill/kieranoneill.com/issues/12)) ([d29137e](https://github.com/kieranroneill/kieranoneill.com/commit/d29137e0a53c35e2c7eba1298b2cb9f8880a5aa4))
+
 # 1.0.0 (2020-12-04)
 
 
