@@ -10,6 +10,7 @@ import {
   getGithubCmd,
   getLinkedInCmd,
   getTwitterCmd,
+  getVersion,
 } from '../../commands';
 
 // Components.
@@ -26,6 +27,7 @@ import {
   githubDescription,
   linkedinDescription,
   twitterDescription,
+  versionDescription,
 } from '../../descriptions';
 
 const WrapComponent = styled.div`
@@ -71,6 +73,7 @@ Type \`help\` to begin'
             github: getGithubCmd(),
             linkedin: getLinkedInCmd(),
             twitter: getTwitterCmd(),
+            version: getVersion(),
           }}
           descriptions={{
             asteroids: asteroidsDescription,
@@ -79,6 +82,7 @@ Type \`help\` to begin'
             github: githubDescription,
             linkedin: linkedinDescription,
             twitter: twitterDescription,
+            version: versionDescription,
           }}
           hideTopBar={true}
           msg={msg}

@@ -13,5 +13,5 @@
     "typeRoots": ["node_modules/@types", "webpack/@types"]
   },
   "exclude": ["dist", "node_modules", "src/**/*", "test"],
-  "include": ["webpack/**/*", "package.json"]
+  "include": ["webpack/**/*"]
 }

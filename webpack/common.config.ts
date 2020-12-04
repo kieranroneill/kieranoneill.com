@@ -59,7 +59,7 @@ const commonConfig: Partial<Configuration> = {
     new DefinePlugin({
       __ENV__: JSON.stringify(process.env.NODE_ENV),
       ...(packageJson && {
-        __VERSION__: JSON.stringify(packageJson.version),
+        __VERSION__: JSON.stringify(`v${packageJson.version}`),
       }),
     }),
     new FaviconsWebpackPlugin({
