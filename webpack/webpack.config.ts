@@ -1,7 +1,7 @@
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { resolve } from 'path';
-import { Configuration, DefinePlugin } from 'webpack';
+import { Configuration } from 'webpack';
 import merge from 'webpack-merge';
 
 // Config.
@@ -37,11 +37,6 @@ const config: Partial<Configuration> = merge(commonConfig, {
 
   plugins: [
     new CleanWebpackPlugin(),
-    new DefinePlugin({
-      'process.env': {
-        NODE_ENV: JSON.stringify('production'),
-      },
-    }),
     new HtmlWebpackPlugin({
       inject: 'body',
       minify: {

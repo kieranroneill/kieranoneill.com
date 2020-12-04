@@ -1,10 +1,6 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { resolve } from 'path';
-import {
-  Configuration,
-  DefinePlugin,
-  HotModuleReplacementPlugin,
-} from 'webpack';
+import { Configuration, HotModuleReplacementPlugin } from 'webpack';
 import merge from 'webpack-merge';
 import WebpackNotifierPlugin from 'webpack-notifier';
 
@@ -39,11 +35,6 @@ const config: Configuration = merge(commonConfig, {
   },
 
   plugins: [
-    new DefinePlugin({
-      'process.env': {
-        NODE_ENV: JSON.stringify('development'),
-      },
-    }),
     new HtmlWebpackPlugin({
       inject: 'body',
       minify: false,
