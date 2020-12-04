@@ -12,7 +12,7 @@
 
 ### 1. Setting up the dev environment
 
-* Install [Node.js](https://nodejs.org/en/)
+* Install [Node.js v14.15.1+](https://nodejs.org/en/)
 * Install [Yarn](https://classic.yarnpkg.com/en/docs/install)
 
 1. Install the project dependencies:

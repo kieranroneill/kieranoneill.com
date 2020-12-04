@@ -1,9 +1,12 @@
-name: Lint and test
+name: Release
 
-on: [pull_request]
+on:
+  push:
+    branches:
+      - main
 
 jobs:
-  lint-and-test:
+  release:
     runs-on: ubuntu-latest
 
     strategy:
@@ -19,12 +22,11 @@ jobs:
           node-version: ${{ matrix.node-version }}
           registry-url: https://npm.pkg.github.com/
           scope: '@kieranroneill'
-      - name: "Install 📦"
+      - name: "Install 🚧"
         run: yarn install --frozen-lockfile
         env:
-          CI: true
           NODE_AUTH_TOKEN: ${{ secrets.PAT }}
-      - name: "Lint 👕"
-        run: yarn lint
-      - name: "Test 🚨"
-        run: yarn test
+      - name: "Release 🚀"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npx semantic-release
