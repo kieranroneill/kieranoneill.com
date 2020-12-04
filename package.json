@@ -18,10 +18,10 @@
     "node": ">=14.15.1"
   },
   "scripts": {
-    "build": "cross-env TS_NODE_PROJECT=\"tsconfig.webpack.json\" node_modules/.bin/webpack --config \"webpack/webpack.config.ts\"",
-    "lint": "eslint \"src/\" --ext .js,.ts,.tsx",
-    "prettier": "node_modules/.bin/prettier --write \"src/**/*.{js,json,ts,tsx}\"",
-    "start": "cross-env TS_NODE_PROJECT=\"tsconfig.webpack.json\" node_modules/.bin/webpack-dev-server --config \"webpack/webpack.dev.config.ts\" --progress",
+    "build": "cross-env NODE_ENV=production TS_NODE_PROJECT=tsconfig.webpack.json node_modules/.bin/webpack --config webpack/webpack.config.ts",
+    "lint": "eslint src/ --ext .js,.ts,.tsx",
+    "prettier": "node_modules/.bin/prettier --write src/**/*.{js,json,ts,tsx}",
+    "start": "cross-env NODE_ENV=development TS_NODE_PROJECT=tsconfig.webpack.json node_modules/.bin/webpack-dev-server --config webpack/webpack.dev.config.ts --progress",
     "test": "cross-env NODE_ENV=test jest --config=test/jest.config.js"
   },
   "dependencies": {
