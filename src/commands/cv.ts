@@ -21,7 +21,7 @@ Mandatory arguments to long options are mandatory for short options too.
   -h, --help      ${Descriptions.HELP_OPTION}
   -v, --version   ${Descriptions.VERSION_OPTION}
 `;
-  const version: string = 'v8.2.8';
+  const version: string = 'v9.0.0';
 
   return {
     method: (args, print) => {
