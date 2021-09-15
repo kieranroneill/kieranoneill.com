@@ -1,14 +1,140 @@
+import { AnimatorGeneralProvider } from '@arwes/animation';
+import {
+  ArwesThemeProvider,
+  Button,
+  Card,
+  FramePentagon,
+  StylesBaseline,
+  Text,
+} from '@arwes/core';
 import React from 'react';
 import styled from 'styled-components';
 
+// Constants
+import { Files, Links, Paths, Versions } from '../../constants';
+
+// Theme
+import { minSizes, palette, typography } from '../../theme';
+
+// Utils
+import { downloadFile } from '../../utils';
+
+const Footer = styled.div`
+  align-self: center;
+  display: inline-flex;
+  flex-direction: column;
+`;
+const Header = styled(Text)`
+  color: ${palette.brand.primary.main};
+  text-transform: none;
+`;
+const StyledButton = styled(Button)`
+  margin: 0 0 0.75rem;
+  min-width: 12rem;
+`;
+const Paragraph = styled(Text)`
+  margin: 0 0 0.75rem;
+`;
 const WrapComponent = styled.div`
+  align-items: center;
+  background-color: ${palette.greyScale.darkerGrey};
   display: flex;
   flex-direction: row;
+  justify-content: center;
   height: 100vh;
 `;
 
-const MobileOrDesktopApp: React.FC = () => (
-  <WrapComponent>Hello human!</WrapComponent>
-);
+const MobileOrDesktopApp: React.FC = () => {
+  const handleDownloadCvClick = () => {
+    downloadFile(Paths.DOCS, Files.CV.replace('${version}', Versions.CV));
+  };
+  const handleLinkClick = (link: string) => () => {
+    window.open(link, '_blank');
+  };
+
+  return (
+    <WrapComponent>
+      <ArwesThemeProvider
+        themeSettings={{
+          palette: {
+            primary: palette.brand.primary,
+            secondary: palette.brand.secondary,
+          },
+        }}
+      >
+        <StylesBaseline
+          styles={{
+            body: {
+              color: palette.brand.primary.main,
+              fontFamily: typography.secondaryFontFamily,
+            },
+          }}
+        />
+        <div>
+          <AnimatorGeneralProvider
+            animator={{
+              duration: {
+                enter: 400,
+                exit: 400,
+                stagger: 80,
+              },
+            }}
+          >
+            <Card
+              animator={{ activate: true }}
+              options={
+                <Footer>
+                  <StyledButton
+                    active={true}
+                    FrameComponent={FramePentagon}
+                    onClick={handleDownloadCvClick}
+                  >
+                    <Text>Download CV</Text>
+                  </StyledButton>
+                  <StyledButton
+                    active={true}
+                    FrameComponent={FramePentagon}
+                    onClick={handleLinkClick(Links.GITHUB)}
+                  >
+                    <Text>GitHub</Text>
+                  </StyledButton>
+                  <StyledButton
+                    active={true}
+                    FrameComponent={FramePentagon}
+                    onClick={handleLinkClick(Links.LINKEDIN)}
+                  >
+                    <Text>LinkedIn</Text>
+                  </StyledButton>
+                  <StyledButton
+                    active={true}
+                    FrameComponent={FramePentagon}
+                    onClick={handleLinkClick(Links.TWITTER)}
+                  >
+                    <Text>Twitter</Text>
+                  </StyledButton>
+                </Footer>
+              }
+              style={{
+                color: palette.brand.primary.main,
+                maxWidth: minSizes.tablet,
+                minWidth: minSizes.mobile,
+              }}
+              title={<Header>Welcome to kieranoneill.com</Header>}
+            >
+              <Paragraph>
+                This is te mobile version of my website where you will find my
+                CV and social links.
+              </Paragraph>
+              <Paragraph>
+                Be sure to check out my website on a desktop or laptop, as you
+                may find some tasty treats!
+              </Paragraph>
+            </Card>
+          </AnimatorGeneralProvider>
+        </div>
+      </ArwesThemeProvider>
+    </WrapComponent>
+  );
+};
 
 export default MobileOrDesktopApp;
