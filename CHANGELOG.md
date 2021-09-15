@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/kieranroneill/kieranoneill.com/compare/v1.2.0...v1.3.0) (2021-09-15)
+
+
+### Features
+
+* mobile site ([#36](https://github.com/kieranroneill/kieranoneill.com/issues/36)) ([199854d](https://github.com/kieranroneill/kieranoneill.com/commit/199854d78bf3c1f647c13f2773a5fc243bf2de27))
+
 # [1.2.0](https://github.com/kieranroneill/kieranoneill.com/compare/v1.1.0...v1.2.0) (2021-04-26)
 
 
