@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/kieranroneill/kieranoneill.com/compare/v1.3.0...v1.4.0) (2021-09-15)
+
+
+### Features
+
+* add blog link ([#37](https://github.com/kieranroneill/kieranoneill.com/issues/37)) ([6bb765b](https://github.com/kieranroneill/kieranoneill.com/commit/6bb765b3247e8579a6f0d8ee72da045604e87fc0))
+
 # [1.3.0](https://github.com/kieranroneill/kieranoneill.com/compare/v1.2.0...v1.3.0) (2021-09-15)
 
 
