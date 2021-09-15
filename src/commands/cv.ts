@@ -1,7 +1,7 @@
 import { Command } from '@kieranroneill/terminal-in-react';
 
 // Constants.
-import { Descriptions, Files, Paths } from '../constants';
+import { Descriptions, Files, Paths, Versions } from '../constants';
 
 // Descriptions.
 import { cvDescription } from '../descriptions';
@@ -21,7 +21,6 @@ Mandatory arguments to long options are mandatory for short options too.
   -h, --help      ${Descriptions.HELP_OPTION}
   -v, --version   ${Descriptions.VERSION_OPTION}
 `;
-  const version: string = 'v9.0.0';
 
   return {
     method: (args, print) => {
@@ -32,13 +31,13 @@ Mandatory arguments to long options are mandatory for short options too.
       }
 
       if (args.v || args.v) {
-        print(version);
+        print(Versions.CV);
 
         return;
       }
 
       if (args.d || args.download) {
-        downloadFile(Paths.DOCS, Files.CV.replace('${version}', version));
+        downloadFile(Paths.DOCS, Files.CV.replace('${version}', Versions.CV));
 
         print('You have downloaded my CV, prepare to be entertained!');
 
@@ -46,7 +45,7 @@ Mandatory arguments to long options are mandatory for short options too.
       }
 
       window.open(
-        `${Paths.DOCS}/${Files.CV.replace('${version}', version)}`,
+        `${Paths.DOCS}/${Files.CV.replace('${version}', Versions.CV)}`,
         '_blank'
       );
 
