@@ -1,8 +1,8 @@
 // Models.
 import { Explosion, Particle } from '../models';
 
-// Themes.
-import palette from '../../../theme/palette';
+// Themes
+import { palette } from '../../../theme';
 
 export default function drawExplosion(
   ctx: CanvasRenderingContext2D,

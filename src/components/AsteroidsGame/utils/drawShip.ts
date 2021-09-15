@@ -4,8 +4,8 @@ import { GameConstants, ShipConstants, SpaceConstants } from '../constants';
 // Models.
 import { Ship } from '../models';
 
-// Themes.
-import palette from '../../../theme/palette';
+// Themes
+import { palette } from '../../../theme';
 
 // Utils.
 import drawBasicShip from './drawBasicShip';

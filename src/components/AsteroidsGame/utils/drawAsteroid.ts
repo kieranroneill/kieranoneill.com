@@ -4,8 +4,8 @@ import { ShipConstants } from '../constants';
 // Models.
 import { Asteroid } from '../models';
 
-// Themes.
-import palette from '../../../theme/palette';
+// Themes
+import { palette } from '../../../theme';
 
 export default function drawAsteroid(
   ctx: CanvasRenderingContext2D,

@@ -1,5 +1,5 @@
-// Themes.
-import palette from '../../../theme/palette';
+// Themes
+import { palette } from '../../../theme';
 
 export default function drawSpace(
   ctx: CanvasRenderingContext2D,

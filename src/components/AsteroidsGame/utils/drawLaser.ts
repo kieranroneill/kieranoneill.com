@@ -1,8 +1,8 @@
 // Constants.
 import { ShipConstants } from '../constants';
 
-// Themes.
-import palette from '../../../theme/palette';
+// Themes
+import { palette } from '../../../theme';
 
 // Types.
 import { ILaser } from '../types';

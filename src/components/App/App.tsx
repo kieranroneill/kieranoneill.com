@@ -8,7 +8,7 @@ import Helmet from '../Helmet';
 import MobileOrTabletApp from './MobileOrTabletApp';
 
 // Theme
-import { minSizes } from '../../theme/media';
+import { minSizes } from '../../theme';
 
 const App: React.FC = () => {
   const isDesktopOrLaptop = useMediaQuery({ minWidth: minSizes.desktop });

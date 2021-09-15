@@ -1,10 +1,10 @@
-// Constants.
+// Constants
 import { AsteroidConstants } from '../constants';
 
-// Themes.
-import palette from '../../../theme/palette';
+// Themes
+import { palette } from '../../../theme';
 
-// Types.
+// Types
 import { IEntity } from '../types';
 
 export default function drawBasicShip(
