@@ -14,6 +14,7 @@ const palette: Palette = {
 
   greyScale: {
     black: '#000',
+    darkerGrey: '#031b20',
     darkGrey: '#8c8c8c',
     grey: '#ccc',
     lightGrey: '#f2f2f2',
