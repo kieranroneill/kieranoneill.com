@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import {
   getAsteroidsCmd,
   getBarrelRollCmd,
+  getBlogCmd,
   getCVCmd,
   getGithubCmd,
   getLinkedInCmd,
@@ -21,6 +22,7 @@ import BarrelRoll from '../BarrelRoll';
 import {
   asteroidsDescription,
   barrelrollDescription,
+  blogDescription,
   cvDescription,
   githubDescription,
   linkedinDescription,
@@ -68,6 +70,7 @@ Type \`help\` to begin'
           commands={{
             asteroids: getAsteroidsCmd(setAsteroidsOpen),
             barrelroll: getBarrelRollCmd(setBarrelRolling),
+            blog: getBlogCmd(),
             cv: getCVCmd(),
             github: getGithubCmd(),
             linkedin: getLinkedInCmd(),
@@ -77,6 +80,7 @@ Type \`help\` to begin'
           descriptions={{
             asteroids: asteroidsDescription,
             barrelroll: barrelrollDescription,
+            blog: blogDescription,
             cv: cvDescription,
             github: githubDescription,
             linkedin: linkedinDescription,
