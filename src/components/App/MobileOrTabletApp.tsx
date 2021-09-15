@@ -8,6 +8,7 @@ import {
   Text,
 } from '@arwes/core';
 import React from 'react';
+import { useMediaQuery } from 'react-responsive';
 import styled from 'styled-components';
 
 // Constants
@@ -19,8 +20,15 @@ import { minSizes, palette, typography } from '../../theme';
 // Utils
 import { downloadFile } from '../../utils';
 
+const ButtonContainer = styled.div`
+  display: inline-flex;
+  flex-direction: column;
+  margin: 0 0 1rem;
+`;
+const Container = styled.div<{ isSmallScreen?: boolean }>`
+  ${({ isSmallScreen = false }) => isSmallScreen && 'height: 100%;'}
+`;
 const Footer = styled.div`
-  align-self: center;
   display: inline-flex;
   flex-direction: column;
 `;
@@ -45,6 +53,7 @@ const WrapComponent = styled.div`
 `;
 
 const MobileOrDesktopApp: React.FC = () => {
+  const isSmallScreen: boolean = useMediaQuery({ maxWidth: minSizes.tablet });
   const handleDownloadCvClick = () => {
     downloadFile(Paths.DOCS, Files.CV.replace('${version}', Versions.CV));
   };
@@ -70,7 +79,7 @@ const MobileOrDesktopApp: React.FC = () => {
             },
           }}
         />
-        <div>
+        <Container isSmallScreen={isSmallScreen}>
           <AnimatorGeneralProvider
             animator={{
               duration: {
@@ -84,40 +93,46 @@ const MobileOrDesktopApp: React.FC = () => {
               animator={{ activate: true }}
               options={
                 <Footer>
-                  <StyledButton
-                    active={true}
-                    FrameComponent={FramePentagon}
-                    onClick={handleDownloadCvClick}
-                  >
-                    <Text>Download CV</Text>
-                  </StyledButton>
-                  <StyledButton
-                    active={true}
-                    FrameComponent={FramePentagon}
-                    onClick={handleLinkClick(Links.GITHUB)}
-                  >
-                    <Text>GitHub</Text>
-                  </StyledButton>
-                  <StyledButton
-                    active={true}
-                    FrameComponent={FramePentagon}
-                    onClick={handleLinkClick(Links.LINKEDIN)}
-                  >
-                    <Text>LinkedIn</Text>
-                  </StyledButton>
-                  <StyledButton
-                    active={true}
-                    FrameComponent={FramePentagon}
-                    onClick={handleLinkClick(Links.TWITTER)}
-                  >
-                    <Text>Twitter</Text>
-                  </StyledButton>
+                  <ButtonContainer>
+                    <StyledButton
+                      active={true}
+                      FrameComponent={FramePentagon}
+                      onClick={handleDownloadCvClick}
+                    >
+                      <Text>Download CV</Text>
+                    </StyledButton>
+                    <StyledButton
+                      active={true}
+                      FrameComponent={FramePentagon}
+                      onClick={handleLinkClick(Links.GITHUB)}
+                    >
+                      <Text>GitHub</Text>
+                    </StyledButton>
+                    <StyledButton
+                      active={true}
+                      FrameComponent={FramePentagon}
+                      onClick={handleLinkClick(Links.LINKEDIN)}
+                    >
+                      <Text>LinkedIn</Text>
+                    </StyledButton>
+                    <StyledButton
+                      active={true}
+                      FrameComponent={FramePentagon}
+                      onClick={handleLinkClick(Links.TWITTER)}
+                    >
+                      <Text>Twitter</Text>
+                    </StyledButton>
+                  </ButtonContainer>
+                  <Text>{`Version ${__VERSION__}`}</Text>
                 </Footer>
               }
               style={{
                 color: palette.brand.primary.main,
                 maxWidth: minSizes.tablet,
                 minWidth: minSizes.mobile,
+                ...(isSmallScreen && {
+                  height: '100%',
+                }),
               }}
               title={<Header>Welcome to kieranoneill.com</Header>}
             >
@@ -131,7 +146,7 @@ const MobileOrDesktopApp: React.FC = () => {
               </Paragraph>
             </Card>
           </AnimatorGeneralProvider>
-        </div>
+        </Container>
       </ArwesThemeProvider>
     </WrapComponent>
   );
