@@ -19,7 +19,7 @@ module.exports = {
       '<rootDir>/test/mocks/fileMock.js',
     '\\.(css)$': '<rootDir>/test/mocks/stylesMock.js',
   },
-  rootDir: '..',
+  rootDir: '.',
   roots: ['<rootDir>/src/'],
   setupFilesAfterEnv: ['<rootDir>/test/setup.ts'],
   snapshotSerializers: ['enzyme-to-json/serializer'],

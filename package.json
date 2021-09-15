@@ -23,7 +23,7 @@
     "lint": "eslint src/ --ext .js,.ts,.tsx",
     "prettier": "node_modules/.bin/prettier --write src/**/*.{js,json,ts,tsx}",
     "start": "cross-env NODE_ENV=development TS_NODE_PROJECT=tsconfig.webpack.json node_modules/.bin/webpack-dev-server --config webpack/webpack.dev.config.ts --progress",
-    "test": "cross-env NODE_ENV=test jest --config=test/jest.config.js"
+    "test": "cross-env NODE_ENV=test jest"
   },
   "dependencies": {
     "@kieranroneill/terminal-in-react": "^4.3.7",
