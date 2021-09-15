@@ -1,7 +1,8 @@
 import { css, FlattenSimpleInterpolation } from 'styled-components';
 
-export const minSizes: Record<'desktop' | 'tablet', number> = {
+export const minSizes: Record<'desktop' | 'mobile' | 'tablet', number> = {
   desktop: 1280,
+  mobile: 400,
   tablet: 768,
 };
 

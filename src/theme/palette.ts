@@ -1,4 +1,10 @@
-export default {
+export interface Palette {
+  brand: Record<string, string>;
+  greyScale: Record<string, string>;
+  ui: Record<string, string>;
+}
+
+const palette: Palette = {
   brand: {
     // Primary.
     purple300: '#9a6dea',
@@ -37,3 +43,5 @@ export default {
     yellow: '#ffff00',
   },
 };
+
+export default palette;
