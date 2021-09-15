@@ -28,6 +28,9 @@ import {
   versionDescription,
 } from '../../descriptions';
 
+// Theme
+import { palette } from '../../theme';
+
 const WrapComponent = styled.div`
   display: flex;
   flex-direction: row;
@@ -61,7 +64,7 @@ Type \`help\` to begin'
         <Terminal
           allowTabs={false}
           backgroundColor="black"
-          color="green"
+          color={palette.brand.primary.main}
           commands={{
             asteroids: getAsteroidsCmd(setAsteroidsOpen),
             barrelroll: getBarrelRollCmd(setBarrelRolling),

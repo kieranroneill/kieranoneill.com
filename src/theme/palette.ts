@@ -1,26 +1,15 @@
+import { createThemePaletteBasic, ThemePaletteBasic } from '@arwes/design';
+
 export interface Palette {
-  brand: Record<string, string>;
+  brand: Record<'primary' | 'secondary', ThemePaletteBasic>;
   greyScale: Record<string, string>;
   ui: Record<string, string>;
 }
 
 const palette: Palette = {
   brand: {
-    // Primary.
-    purple300: '#9a6dea',
-    purple400: '#8154d1',
-    purple500: '#673ab7',
-    purple600: '#4e219e',
-    purple700: '#340784',
-    purple800: '#1b006b',
-
-    // Accent.
-    green300: '#61ffa4',
-    green400: '#48e68b',
-    green500: '#2ecc71',
-    green600: '#15b358',
-    green700: '#00993e',
-    green800: '#008025',
+    primary: createThemePaletteBasic({ main: '#2ecc71' }, 0.15),
+    secondary: createThemePaletteBasic({ main: '#0ff' }, 0.15),
   },
 
   greyScale: {
