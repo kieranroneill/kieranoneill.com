@@ -19,6 +19,7 @@
   },
   "scripts": {
     "build": "cross-env NODE_ENV=production TS_NODE_PROJECT=tsconfig.webpack.json node_modules/.bin/webpack --config webpack/webpack.config.ts",
+    "postinstall": "husky install",
     "lint": "eslint src/ --ext .js,.ts,.tsx",
     "prettier": "node_modules/.bin/prettier --write src/**/*.{js,json,ts,tsx}",
     "start": "cross-env NODE_ENV=development TS_NODE_PROJECT=tsconfig.webpack.json node_modules/.bin/webpack-dev-server --config webpack/webpack.dev.config.ts --progress",
