@@ -1,5 +1,4 @@
 import { Command } from '@kieranroneill/terminal-in-react';
-import React from 'react';
 
 // Constants.
 import { Descriptions } from '../constants';

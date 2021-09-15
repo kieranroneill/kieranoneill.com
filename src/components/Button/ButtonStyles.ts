@@ -8,13 +8,13 @@ const dashAnimation = keyframes`
   24% { background-color: ${palette.greyScale.white}; }
 
   25%,
-  49% { background-color: ${palette.brand.green600}; }
+  49% { background-color: ${palette.brand.primary.dark1}; }
 
   50%,
   74% { background-color: ${palette.greyScale.white}; }
 
   75%,
-  100% { background-color: ${palette.brand.green600}; }
+  100% { background-color: ${palette.brand.primary.dark1}; }
 `;
 export const ButtonHoverStyles = css`
   span {
@@ -75,7 +75,7 @@ export const ButtonOverlay = styled.div`
 `;
 export const ButtonStyles = css`
   align-items: center;
-  background-color: ${palette.brand.green500};
+  background-color: ${palette.brand.primary.main};
   border: none;
   color: ${palette.greyScale.white};
   cursor: pointer;
@@ -91,7 +91,7 @@ export const ButtonStyles = css`
   z-index: 1;
 
   &:after {
-    background: ${palette.brand.green600};
+    background: ${palette.brand.primary.dark1};
     position: absolute;
     right: 0;
     bottom: 0;
@@ -102,7 +102,7 @@ export const ButtonStyles = css`
   }
 `;
 export const Square = styled.span`
-  background-color: ${palette.brand.green600};
+  background-color: ${palette.brand.primary.dark1};
   position: relative;
   display: block;
   left: -15px;
@@ -126,7 +126,7 @@ export const Square = styled.span`
   }
 
   :nth-child(odd):after {
-    background-color: ${palette.brand.green600};
+    background-color: ${palette.brand.primary.dark1};
   }
 
   &:nth-child(2) {
