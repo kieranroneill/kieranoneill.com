@@ -1,4 +1,4 @@
-// Constants.
+// constants
 import { ShipConstants } from '../constants';
 
 // Themes

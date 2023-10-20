@@ -1,6 +1,6 @@
 import styled, { css, keyframes } from 'styled-components';
 
-// Theme.
+// theme
 import { palette, typography } from '../../theme';
 
 const dashAnimation = keyframes`

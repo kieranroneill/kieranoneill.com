@@ -1,4 +1,4 @@
-// Constants.
+// constants
 import { AsteroidConstants, GameConstants, ShipConstants } from './constants';
 
 // Models.
@@ -7,7 +7,7 @@ import { Asteroid, Explosion, Ship } from './models';
 // Themes.
 import { palette } from '../../theme';
 
-// Utils.
+// utils
 import { isLocalStorageAvailable } from '../../utils';
 import {
   createAsteroidBelt,

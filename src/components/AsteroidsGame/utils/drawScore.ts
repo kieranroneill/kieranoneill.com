@@ -1,4 +1,4 @@
-// Constants.
+// constants
 import { GameConstants, ShipConstants } from '../constants';
 
 // Themes.

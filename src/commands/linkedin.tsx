@@ -1,10 +1,10 @@
 import { Command } from '@kieranroneill/terminal-in-react';
 import React from 'react';
 
-// Constants.
+// constants
 import { Descriptions, Links } from '../constants';
 
-// Descriptions.
+// descriptions
 import { linkedinDescription } from '../descriptions';
 
 export default function getCmd(): Command {

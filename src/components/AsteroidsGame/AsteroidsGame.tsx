@@ -1,10 +1,10 @@
 import React, { createRef, useEffect, useState } from 'react';
 import styled from 'styled-components';
 
-// Components.
+// components
 import { Button } from '../Button';
 
-// Constants.
+// constants
 import { GameConstants } from './constants';
 
 // Main.
@@ -43,9 +43,8 @@ const Wrapper = styled.div`
 `;
 
 export const AsteroidsGame: React.FC<IProps> = ({ onClose }: IProps) => {
-  const canvasRef: React.RefObject<HTMLCanvasElement> = createRef<
-    HTMLCanvasElement
-  >();
+  const canvasRef: React.RefObject<HTMLCanvasElement> =
+    createRef<HTMLCanvasElement>();
   const [game, setGame] = useState<Game | null>(null);
   let intervalId: number;
 

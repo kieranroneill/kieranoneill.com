@@ -1,12 +1,12 @@
 import { Command } from '@kieranroneill/terminal-in-react';
 
-// Constants.
+// constants
 import { Descriptions, Files, Paths, Versions } from '../constants';
 
-// Descriptions.
+// descriptions
 import { cvDescription } from '../descriptions';
 
-// Utils.
+// utils
 import { downloadFile } from '../utils';
 
 export default function getCmd(): Command {

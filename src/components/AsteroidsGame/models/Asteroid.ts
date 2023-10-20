@@ -1,4 +1,4 @@
-// Constants.
+// constants
 import { GameConstants } from '../constants';
 
 // Types.

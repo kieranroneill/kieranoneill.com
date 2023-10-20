@@ -1,16 +1,16 @@
 import { Command } from '@kieranroneill/terminal-in-react';
 import React from 'react';
 
-// Constants.
+// constants
 import { Descriptions, Links } from '../constants';
 
-// Descriptions.
-import { blogDescription } from '../descriptions';
+// descriptions
+import { xDescription } from '../descriptions';
 
 export default function getCmd(): Command {
   const helpDescription: string = `
-Usage: blog [OPTION]...
-${blogDescription}
+Usage: x [OPTION]...
+${xDescription}
 
 Mandatory arguments to long options are mandatory for short options too.
   -h, --help      ${Descriptions.HELP_OPTION}
@@ -27,15 +27,15 @@ Mandatory arguments to long options are mandatory for short options too.
 
       if (args.l || args.link) {
         print(
-          <a href={Links.BLOG} rel="noreferrer" target="_blank">
-            {Links.BLOG}
+          <a href={Links.X} rel="noreferrer" target="_blank">
+            {Links.X}
           </a>
         );
 
         return;
       }
 
-      window.open(Links.BLOG, '_blank');
+      window.open(Links.X, '_blank');
 
       return;
     },
