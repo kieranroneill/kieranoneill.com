@@ -1,13 +1,13 @@
 import React from 'react';
 import { useMediaQuery } from 'react-responsive';
 
-// Components
+// components
 import DesktopApp from './DesktopApp';
 import GlobalStyle from '../GlobalStyle';
 import Helmet from '../Helmet';
 import MobileOrTabletApp from './MobileOrTabletApp';
 
-// Theme
+// theme
 import { minSizes } from '../../theme';
 
 const App: React.FC = () => {
