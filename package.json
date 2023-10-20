@@ -2,20 +2,21 @@
   "name": "kieranoneill.com",
   "version": "1.4.0",
   "description": "A website about me (Kieran O'Neill).",
-  "main": "dist/index.html",
+  "main": "dist/main.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kieranroneill/kieranoneill.com"
+  },
   "author": {
     "name": "Kieran O'Neill",
     "email": "kieran.oneill@pm.me",
     "url": "https://kieranoneill.com"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/kieranroneill/kieranoneill.com"
-  },
+  "license": "MIT",
   "homepage": "https://kieranroneill.github.io/kieranoneill.com",
   "private": true,
   "engines": {
-    "node": ">=14.15.1"
+    "node": ">=18.0.0"
   },
   "scripts": {
     "build": "cross-env TS_NODE_PROJECT=\"webpack/tsconfig.webpack.json\" webpack --config webpack/webpack.config.ts --config-name production",
