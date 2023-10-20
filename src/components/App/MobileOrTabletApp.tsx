@@ -11,13 +11,13 @@ import React from 'react';
 import { useMediaQuery } from 'react-responsive';
 import styled from 'styled-components';
 
-// Constants
+// constants
 import { Files, Links, Paths, Versions } from '../../constants';
 
-// Theme
+// theme
 import { minSizes, palette, typography } from '../../theme';
 
-// Utils
+// utils
 import { downloadFile } from '../../utils';
 
 const ButtonContainer = styled.div`
@@ -118,16 +118,9 @@ const MobileOrDesktopApp: React.FC = () => {
                     <StyledButton
                       active={true}
                       FrameComponent={FramePentagon}
-                      onClick={handleLinkClick(Links.TWITTER)}
+                      onClick={handleLinkClick(Links.X)}
                     >
                       <Text>Twitter</Text>
-                    </StyledButton>
-                    <StyledButton
-                      active={true}
-                      FrameComponent={FramePentagon}
-                      onClick={handleLinkClick(Links.BLOG)}
-                    >
-                      <Text>Blog</Text>
                     </StyledButton>
                   </ButtonContainer>
                   <Text>{`Version ${__VERSION__}`}</Text>

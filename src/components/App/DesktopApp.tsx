@@ -2,35 +2,33 @@ import Terminal from '@kieranroneill/terminal-in-react';
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-// Commands
+// commands
 import {
   getAsteroidsCmd,
   getBarrelRollCmd,
-  getBlogCmd,
   getCVCmd,
   getGithubCmd,
   getLinkedInCmd,
-  getTwitterCmd,
+  getXCmd,
   getVersion,
 } from '../../commands';
 
-// Components
+// components
 import AsteroidsGame from '../AsteroidsGame';
 import BarrelRoll from '../BarrelRoll';
 
-// Descriptions
+// descriptions
 import {
   asteroidsDescription,
   barrelrollDescription,
-  blogDescription,
   cvDescription,
   githubDescription,
   linkedinDescription,
-  twitterDescription,
+  xDescription,
   versionDescription,
 } from '../../descriptions';
 
-// Theme
+// theme
 import { palette } from '../../theme';
 
 const WrapComponent = styled.div`
@@ -70,22 +68,20 @@ Type \`help\` to begin'
           commands={{
             asteroids: getAsteroidsCmd(setAsteroidsOpen),
             barrelroll: getBarrelRollCmd(setBarrelRolling),
-            blog: getBlogCmd(),
             cv: getCVCmd(),
             github: getGithubCmd(),
             linkedin: getLinkedInCmd(),
-            twitter: getTwitterCmd(),
             version: getVersion(),
+            x: getXCmd(),
           }}
           descriptions={{
             asteroids: asteroidsDescription,
             barrelroll: barrelrollDescription,
-            blog: blogDescription,
             cv: cvDescription,
             github: githubDescription,
             linkedin: linkedinDescription,
-            twitter: twitterDescription,
             version: versionDescription,
+            x: xDescription,
           }}
           hideTopBar={true}
           msg={msg}

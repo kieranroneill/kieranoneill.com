@@ -1,4 +1,4 @@
-// Constants.
+// constants
 import { GameConstants, ShipConstants, SpaceConstants } from '../constants';
 
 // Models.
@@ -7,7 +7,7 @@ import { Ship } from '../models';
 // Themes
 import { palette } from '../../../theme';
 
-// Utils.
+// utils
 import drawBasicShip from './drawBasicShip';
 
 export default function drawShip(

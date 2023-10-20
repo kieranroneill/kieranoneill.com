@@ -1,1 +1,1 @@
-export const CV = 'v9.0.0';
+export const CV = 'v11.0.0';

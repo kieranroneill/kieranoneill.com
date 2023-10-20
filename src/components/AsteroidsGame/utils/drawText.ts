@@ -1,7 +1,7 @@
-// Constants.
+// constants
 import { GameConstants } from '../constants';
 
-// Theme.
+// theme
 import { typography } from '../../../theme';
 
 export default function drawText(

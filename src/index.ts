@@ -1,7 +1,7 @@
 import { createElement } from 'react';
 import { render } from 'react-dom';
 
-// Components.
+// components
 import App from './components/App';
 
 export function onDOMContentLoaded(): void {

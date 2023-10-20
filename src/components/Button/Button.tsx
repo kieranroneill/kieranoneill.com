@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-// Components.
+// components
 import {
   ButtonHoverStyles,
   ButtonOverlay,
@@ -9,7 +9,7 @@ import {
   Square,
 } from './ButtonStyles';
 
-// Utils.
+// utils
 import { getRandomString } from '../../utils';
 
 const buttonOverlayClassName: string = getRandomString(5);

@@ -1,15 +1,15 @@
 import { Command } from '@kieranroneill/terminal-in-react';
 
-// Constants.
+// constants
 import { Descriptions } from '../constants';
 
-// Descriptions.
-import { twitterDescription } from '../descriptions';
+// descriptions
+import { xDescription } from '../descriptions';
 
 export default function getCmd(): Command {
   const helpDescription: string = `
 Usage: version [OPTION]...
-${twitterDescription}
+${xDescription}
 
 Mandatory arguments to long options are mandatory for short options too.
   -h, --help      ${Descriptions.HELP_OPTION}

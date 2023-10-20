@@ -1,10 +1,10 @@
 import { Command } from '@kieranroneill/terminal-in-react';
 import { Dispatch, SetStateAction } from 'react';
 
-// Constants.
+// constants
 import { Descriptions } from '../constants';
 
-// Descriptions.
+// descriptions
 import { asteroidsDescription } from '../descriptions';
 
 const helpDescription: string = `

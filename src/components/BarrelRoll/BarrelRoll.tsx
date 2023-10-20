@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-// Components.
+// components
 import RollAnimation from '../RollAnimation';
 
 interface IProps {

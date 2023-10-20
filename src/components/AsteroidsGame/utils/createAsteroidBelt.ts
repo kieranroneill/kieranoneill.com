@@ -1,10 +1,10 @@
-// Constants.
+// constants
 import { AsteroidConstants } from '../constants';
 
 // Models.
 import { Asteroid, Ship } from '../models';
 
-// Utils.
+// utils
 import distBetweenPoints from './distanceBetweenPoints';
 
 export default function createAsteroidBelt(

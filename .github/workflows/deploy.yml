@@ -1,0 +1,35 @@
+name: Deploy
+
+on:
+  release:
+    types: [released] # triggered on main branch releases
+
+jobs:
+  deploy:
+    name: "Deploy"
+    runs-on: ubuntu-latest
+    steps:
+      - name: "🛎 Checkout"
+        uses: actions/checkout@v3
+      - name: "🔧 Setup"
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: yarn
+      - name: "📝 Create .npmrc"
+        run: |
+          echo "//npm.pkg.github.com/:_authToken=${{ secrets.READ_PACKAGES_TOKEN }}" >> .npmrc
+          echo "@kieranroneill:registry=https://npm.pkg.github.com" >> .npmrc
+      - name: "📦 Install"
+        run: yarn install --frozen-lockfile
+      - name: "🏗️ Build"
+        run: yarn build
+      - name: "🚀 Deploy"
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          cname: kieranoneill.com
+          personal_token: ${{ secrets.READ_AND_WRITE_REPOS_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./dist
+          user_name: kieranroneill
+          user_email: hello@kieranoneill.com

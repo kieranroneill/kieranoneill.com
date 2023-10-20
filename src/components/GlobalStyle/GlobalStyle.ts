@@ -4,10 +4,10 @@ import {
   GlobalStyleComponent,
 } from 'styled-components';
 
-// Components
+// components
 import RollAnimation from '../RollAnimation';
 
-// Fonts
+// fonts
 import SourceCodeProBoldTTF from '../../fonts/SourceCodePro/SourceCodePro-Bold.ttf';
 import SourceCodeProBoldWOFF from '../../fonts/SourceCodePro/SourceCodePro-Bold.woff';
 import SourceCodeProBoldWOFF2 from '../../fonts/SourceCodePro/SourceCodePro-Bold.woff2';

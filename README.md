@@ -1,21 +1,46 @@
-[![Deployment Status](https://github.com/kieranroneill/kieranoneill.com/workflows/Deployment/badge.svg)](https://github.com/kieranroneill/kieranoneill.com/actions)
+<h1 p align="center">
+  Kieran O'Neill (the website)
+</h1>
 
-# Kieran O'Neill - the website
+<a href="https://kieranoneill.com" target="_blank">
+  <h3 p align="center">
+    https://kieranoneill.com
+  </h3>
+</a>
+
+<p p align="center">
+  A website about me (Kieran O'Neill).
+</p>
 
 #### Table of contents
 
-* [Development](#development)
-    * [1. Setting up the dev environment](#1-setting-up-the-dev-environment)
-    * [2. Running locally](#2-running-locally)
+* [Development](#-development)
+    * [Prerequisites](#prerequisites)
+    * [Setting up the dev environment](#setting-up-the-dev-environment)
+    * [Running locally](#2-running-locally)
 
-## Development
+## 🛠️ Development
 
-### 1. Setting up the dev environment
+### Prerequisites
 
-* Install [Node.js v14.15.1+](https://nodejs.org/en/)
-* Install [Yarn](https://classic.yarnpkg.com/en/docs/install)
+* Install [Nodejs v16.15.0+][nodejs]
+* Install [Yarn v1.22.5+][yarn]
 
-1. Install the project dependencies:
+<sup>[Back to top ^][table-of-contents]</sup>
+
+### Setting up the dev environment
+
+1. Before we install the dependencies, we need to get a Personal Access Token (PAT) on GitHub. See [here][create-pat-on-github] on instructions on how to create one.
+
+2. Create a new file at the root of this project, replacing `GITHUB_PAT` with the PAT you created in the previous step:
+```shell
+cat > .npmrc << EOF
+//npm.pkg.github.com/:_authToken=GITHUB_PAT
+@kieranroneill:registry=https://npm.pkg.github.com
+EOF
+```
+
+3. Install dependencies:
 ```shell script
 yarn install
 ```
@@ -28,3 +53,9 @@ yarn start
 ```
 
 2. Navigate to [http://localhost:1337](http://localhost:1337).
+
+<!-- Links -->
+[create-pat-on-github]:https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
+[nodejs]: https://nodejs.org/en/
+[table-of-contents]: #table-of-contents
+[yarn]: https://yarnpkg.com/
