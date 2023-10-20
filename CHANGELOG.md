@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/kieranroneill/kieranoneill.com/compare/v1.4.0...v1.5.0) (2023-10-20)
+
+
+### Features
+
+* update cv v11.0.0 ([#54](https://github.com/kieranroneill/kieranoneill.com/issues/54)) ([fe5b41f](https://github.com/kieranroneill/kieranoneill.com/commit/fe5b41fdbcad6c5eb6039b7ec7d0ce012aa746fd))
+
 # [1.4.0](https://github.com/kieranroneill/kieranoneill.com/compare/v1.3.0...v1.4.0) (2021-09-15)
 
 
