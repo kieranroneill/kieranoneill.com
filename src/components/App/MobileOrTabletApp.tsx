@@ -122,13 +122,6 @@ const MobileOrDesktopApp: React.FC = () => {
                     >
                       <Text>Twitter</Text>
                     </StyledButton>
-                    <StyledButton
-                      active={true}
-                      FrameComponent={FramePentagon}
-                      onClick={handleLinkClick(Links.BLOG)}
-                    >
-                      <Text>Blog</Text>
-                    </StyledButton>
                   </ButtonContainer>
                   <Text>{`Version ${__VERSION__}`}</Text>
                 </Footer>
