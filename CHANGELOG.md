@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/kieranroneill/kieranoneill.com/compare/v1.5.0...v1.6.0) (2023-12-22)
+
+
+### Features
+
+* update cv to v12 and add i18n translations ([#55](https://github.com/kieranroneill/kieranoneill.com/issues/55)) ([c7bef03](https://github.com/kieranroneill/kieranoneill.com/commit/c7bef03160cba15586866fde3f5f8533674f1a4e))
+
 # [1.5.0](https://github.com/kieranroneill/kieranoneill.com/compare/v1.4.0...v1.5.0) (2023-10-20)
 
 
