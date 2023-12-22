@@ -21,10 +21,10 @@ export default function createCommonConfig(): Configuration {
 
         // assets
         {
-          test: /\.(png.+|gif?.+|jpg?.+|svg?.+|ttf?.+|woff?.+|woff2?.+)$/,
+          test: /\.(ttf?.+|woff?.+|woff2?.+)$/,
           type: 'asset/resource',
           generator: {
-            filename: 'assets/[hash][ext][query]',
+            filename: 'assets/fonts/[hash][ext][query]',
           },
         },
       ],
@@ -35,7 +35,11 @@ export default function createCommonConfig(): Configuration {
         patterns: [
           {
             from: resolve(SRC_PATH, 'docs'),
-            to: resolve(DIST_PATH, 'docs'),
+            to: resolve(DIST_PATH, 'assets', 'docs'),
+          },
+          {
+            from: resolve(SRC_PATH, 'images'),
+            to: resolve(DIST_PATH, 'assets', 'images'),
           },
         ],
       }),

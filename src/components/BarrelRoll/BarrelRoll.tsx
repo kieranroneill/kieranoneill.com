@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 // components
-import RollAnimation from '../RollAnimation';
+import RollAnimation from '@site/components/RollAnimation';
 
 interface IProps {
   onComplete?: () => void;

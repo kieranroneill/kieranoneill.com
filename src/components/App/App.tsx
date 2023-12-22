@@ -20,15 +20,26 @@ interface IProps {
   logger: ILogger;
 }
 
-const App: FC<IProps> = ({ i18next }: IProps) => {
+const App: FC<IProps> = ({ i18next, logger }: IProps) => {
+  // misc
   const isDesktopOrLaptop = useMediaQuery({ minWidth: minSizes.desktop });
+  // render
+  const renderApp = () => {
+    if (isDesktopOrLaptop) {
+      return <DesktopApp logger={logger} />;
+    }
+
+    return <MobileOrTabletApp />;
+  };
 
   return (
-    <I18nextProvider i18n={i18next}>
-      <GlobalStyle />
+    <>
       <Helmet />
-      {isDesktopOrLaptop ? <DesktopApp /> : <MobileOrTabletApp />}
-    </I18nextProvider>
+      <I18nextProvider i18n={i18next}>
+        <GlobalStyle />
+        {renderApp()}
+      </I18nextProvider>
+    </>
   );
 };
 

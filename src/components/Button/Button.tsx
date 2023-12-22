@@ -10,7 +10,7 @@ import {
 } from './ButtonStyles';
 
 // utils
-import { getRandomString } from '../../utils';
+import { getRandomString } from '@site/utils';
 
 const buttonOverlayClassName: string = getRandomString(5);
 

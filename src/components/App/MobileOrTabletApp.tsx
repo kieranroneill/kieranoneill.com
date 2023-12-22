@@ -8,17 +8,24 @@ import {
   Text,
 } from '@arwes/core';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { useMediaQuery } from 'react-responsive';
 import styled from 'styled-components';
 
 // constants
-import { Files, Links, Paths, Versions } from '../../constants';
+import {
+  CV_FILENAME,
+  DOCS_PATH,
+  GITHUB_LINK,
+  LINKEDIN_LINK,
+  X_LINK,
+} from '@site/constants';
 
 // theme
-import { minSizes, palette, typography } from '../../theme';
+import { minSizes, palette, typography } from '@site/theme';
 
 // utils
-import { downloadFile } from '../../utils';
+import { downloadFile } from '@site/utils';
 
 const ButtonContainer = styled.div`
   display: inline-flex;
@@ -53,9 +60,10 @@ const WrapComponent = styled.div`
 `;
 
 const MobileOrDesktopApp: React.FC = () => {
+  const { t } = useTranslation();
   const isSmallScreen: boolean = useMediaQuery({ maxWidth: minSizes.tablet });
   const handleDownloadCvClick = () => {
-    downloadFile(Paths.DOCS, Files.CV.replace('${version}', Versions.CV));
+    downloadFile(DOCS_PATH, `${CV_FILENAME}.pdf`);
   };
   const handleLinkClick = (link: string) => () => {
     window.open(link, '_blank');
@@ -99,30 +107,34 @@ const MobileOrDesktopApp: React.FC = () => {
                       FrameComponent={FramePentagon}
                       onClick={handleDownloadCvClick}
                     >
-                      <Text>Download CV</Text>
+                      <Text>{t('buttons.downloadCv')}</Text>
                     </StyledButton>
+
                     <StyledButton
                       active={true}
                       FrameComponent={FramePentagon}
-                      onClick={handleLinkClick(Links.GITHUB)}
+                      onClick={handleLinkClick(GITHUB_LINK)}
                     >
-                      <Text>GitHub</Text>
+                      <Text>{t('buttons.github')}</Text>
                     </StyledButton>
+
                     <StyledButton
                       active={true}
                       FrameComponent={FramePentagon}
-                      onClick={handleLinkClick(Links.LINKEDIN)}
+                      onClick={handleLinkClick(LINKEDIN_LINK)}
                     >
-                      <Text>LinkedIn</Text>
+                      <Text>{t('buttons.linkedin')}</Text>
                     </StyledButton>
+
                     <StyledButton
                       active={true}
                       FrameComponent={FramePentagon}
-                      onClick={handleLinkClick(Links.X)}
+                      onClick={handleLinkClick(X_LINK)}
                     >
-                      <Text>Twitter</Text>
+                      <Text>{t('buttons.x')}</Text>
                     </StyledButton>
                   </ButtonContainer>
+
                   <Text>{`Version ${__VERSION__}`}</Text>
                 </Footer>
               }
@@ -134,16 +146,11 @@ const MobileOrDesktopApp: React.FC = () => {
                   height: '100%',
                 }),
               }}
-              title={<Header>Welcome to kieranoneill.com</Header>}
+              title={<Header>{t('headings.welcome')}</Header>}
             >
-              <Paragraph>
-                This is te mobile version of my website where you will find my
-                CV and social links.
-              </Paragraph>
-              <Paragraph>
-                Be sure to check out my website on a desktop or laptop, as you
-                may find some tasty treats!
-              </Paragraph>
+              <Paragraph>{t('captions.welcome1')}</Paragraph>
+
+              <Paragraph>{t('captions.welcome2')}</Paragraph>
             </Card>
           </AnimatorGeneralProvider>
         </Container>

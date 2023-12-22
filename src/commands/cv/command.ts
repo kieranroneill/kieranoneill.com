@@ -2,7 +2,6 @@ import { Command } from '@kieranroneill/terminal-in-react';
 
 // constants
 import { CV_FILENAME, DOCS_PATH } from '@site/constants';
-import { CV_VERSION } from './constants';
 
 // types
 import { IBaseCommandOptions } from '@site/types';
@@ -13,9 +12,8 @@ import { downloadFile } from '@site/utils';
 export default function getCmd({ t }: IBaseCommandOptions): Command {
   const downloadOptionDescription: string = t('options.cvDownload');
   const helpOptionDescription: string = t('options.help');
-  const versionOptionDescription: string = t('options.version');
   const web3OptionDescription: string = t('options.web3Cv');
-  let file: string = `${CV_FILENAME.replace('${version}', CV_VERSION)}.pdf`;
+  let file: string = `${CV_FILENAME}.pdf`;
 
   return {
     method: (args, print) => {
@@ -27,7 +25,6 @@ ${t('commands.cv')}
 ${t('captions.arguments')}
   -d, --download  ${downloadOptionDescription}
   -h, --help      ${helpOptionDescription}
-  -v, --version   ${versionOptionDescription}
   --web3   ${web3OptionDescription}
 `);
 
@@ -35,13 +32,7 @@ ${t('captions.arguments')}
       }
 
       if (args.web3) {
-        file = `${CV_FILENAME.replace('${version}', CV_VERSION)}-web3.pdf`;
-      }
-
-      if (args.v || args.version) {
-        print(`v${CV_VERSION}`);
-
-        return;
+        file = `${CV_FILENAME}-web3.pdf`;
       }
 
       if (args.d || args.download) {
@@ -65,11 +56,6 @@ ${t('captions.arguments')}
       {
         name: 'help',
         description: helpOptionDescription,
-        defaultValue: false,
-      },
-      {
-        name: 'version',
-        description: versionOptionDescription,
         defaultValue: false,
       },
       {
