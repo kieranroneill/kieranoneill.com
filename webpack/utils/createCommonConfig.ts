@@ -51,7 +51,6 @@ export default function createCommonConfig(): Configuration {
         ['@site/components']: resolve(SRC_PATH, 'components'),
         ['@site/commands']: resolve(SRC_PATH, 'commands'),
         ['@site/constants']: resolve(SRC_PATH, 'constants'),
-        ['@site/descriptions']: resolve(SRC_PATH, 'descriptions'),
         ['@site/theme']: resolve(SRC_PATH, 'theme'),
         ['@site/translations']: resolve(SRC_PATH, 'translations'),
         ['@site/types']: resolve(SRC_PATH, 'types'),

@@ -1,1 +1,1 @@
-export const DOCS: string = '/docs';
+export const DOCS_PATH: string = '/docs';

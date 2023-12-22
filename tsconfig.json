@@ -22,8 +22,9 @@
       "@site/commands/*": ["src/commands/*"],
       "@site/components/*": ["src/components/*"],
       "@site/constants": ["src/constants"],
-      "@site/descriptions": ["src/descriptions"],
       "@site/theme": ["src/theme"],
+      "@site/translations": ["src/translations"],
+      "@site/types": ["src/types"],
       "@site/utils": ["src/utils"]
     },
     "resolveJsonModule": true,

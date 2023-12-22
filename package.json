@@ -23,7 +23,7 @@
     "lint": "eslint src/ --ext .js,.ts,.tsx",
     "prepare": "husky install",
     "prettier": "prettier --config .prettierrc --write \"**/*.{js,json,ts,tsx}\"",
-    "start": "cross-env TS_NODE_PROJECT=\"webpack/tsconfig.webpack.json\" webpack serve --config webpack/webpack.config.ts --env environment=development --watch --progress",
+    "start": "cross-env TS_NODE_PROJECT=\"webpack/tsconfig.webpack.json\" webpack serve --config webpack/webpack.config.ts --env environment=development",
     "test": "exit 0"
   },
   "devDependencies": {
