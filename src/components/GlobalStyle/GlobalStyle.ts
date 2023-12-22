@@ -5,7 +5,7 @@ import {
 } from 'styled-components';
 
 // components
-import RollAnimation from '../RollAnimation';
+import RollAnimation from '@site/components/RollAnimation';
 
 // fonts
 import SourceCodeProBoldTTF from '../../fonts/SourceCodePro/SourceCodePro-Bold.ttf';

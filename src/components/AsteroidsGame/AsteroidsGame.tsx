@@ -2,7 +2,7 @@ import React, { createRef, useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 // components
-import { Button } from '../Button';
+import { Button } from '@site/components/Button';
 
 // constants
 import { GameConstants } from './constants';
@@ -11,7 +11,7 @@ import { GameConstants } from './constants';
 import Game from './Game';
 
 // Themes.
-import { palette } from '../../theme';
+import { palette } from '@site/theme';
 
 interface IProps {
   onClose?: () => void;

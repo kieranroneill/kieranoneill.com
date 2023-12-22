@@ -1,35 +1,30 @@
 import Terminal from '@kieranroneill/terminal-in-react';
-import React, { useState } from 'react';
+import React, { FC, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 
 // commands
-import {
-  getAsteroidsCmd,
-  getBarrelRollCmd,
-  getCVCmd,
-  getGithubCmd,
-  getLinkedInCmd,
-  getXCmd,
-  getVersion,
-} from '../../commands';
+import getAsteroidsCmd from '@site/commands/asteroids';
+import getBarrelRollCmd from '@site/commands/barrelroll';
+import getCVCmd from '@site/commands/cv';
+import getGithubCmd from '@site/commands/github';
+import getLinkedInCmd from '@site/commands/linkedin';
+import getVersion from '@site/commands/version';
+import getXCmd from '@site/commands/x';
 
 // components
-import AsteroidsGame from '../AsteroidsGame';
-import BarrelRoll from '../BarrelRoll';
-
-// descriptions
-import {
-  asteroidsDescription,
-  barrelrollDescription,
-  cvDescription,
-  githubDescription,
-  linkedinDescription,
-  xDescription,
-  versionDescription,
-} from '../../descriptions';
+import AsteroidsGame from '@site/components/AsteroidsGame';
+import BarrelRoll from '@site/components/BarrelRoll';
 
 // theme
-import { palette } from '../../theme';
+import { palette } from '@site/theme';
+
+// types
+import { IBaseCommandOptions, ILogger } from '@site/types';
+
+interface IProps {
+  logger: ILogger;
+}
 
 const WrapComponent = styled.div`
   display: flex;
@@ -37,9 +32,16 @@ const WrapComponent = styled.div`
   height: 100vh;
 `;
 
-const DesktopApp: React.FC = () => {
+const DesktopApp: FC<IProps> = ({ logger }: IProps) => {
+  const { t } = useTranslation();
+  // state
   const [asteroidsOpen, setAsteroidsOpen] = useState<boolean>(false);
   const [barrelRolling, setBarrelRolling] = useState<boolean>(false);
+  // misc
+  const baseCommandOptions: IBaseCommandOptions = {
+    logger,
+    t,
+  };
   const msg: string = `
 Welcome to
     __   _                                        _ ____
@@ -66,22 +68,28 @@ Type \`help\` to begin'
           backgroundColor="black"
           color={palette.brand.primary.main}
           commands={{
-            asteroids: getAsteroidsCmd(setAsteroidsOpen),
-            barrelroll: getBarrelRollCmd(setBarrelRolling),
-            cv: getCVCmd(),
-            github: getGithubCmd(),
-            linkedin: getLinkedInCmd(),
-            version: getVersion(),
-            x: getXCmd(),
+            asteroids: getAsteroidsCmd({
+              ...baseCommandOptions,
+              setAsteroidsStateFn: setAsteroidsOpen,
+            }),
+            barrelroll: getBarrelRollCmd({
+              ...baseCommandOptions,
+              setBarrelRollStateFn: setBarrelRolling,
+            }),
+            cv: getCVCmd(baseCommandOptions),
+            github: getGithubCmd(baseCommandOptions),
+            linkedin: getLinkedInCmd(baseCommandOptions),
+            version: getVersion(baseCommandOptions),
+            x: getXCmd(baseCommandOptions),
           }}
           descriptions={{
-            asteroids: asteroidsDescription,
-            barrelroll: barrelrollDescription,
-            cv: cvDescription,
-            github: githubDescription,
-            linkedin: linkedinDescription,
-            version: versionDescription,
-            x: xDescription,
+            asteroids: t('commands.asteroids'),
+            barrelroll: t('commands.barrelroll'),
+            cv: t('commands.cv'),
+            github: t('commands.github'),
+            linkedin: t('commands.linkedin'),
+            version: t('commands.version'),
+            x: t('commands.x'),
           }}
           hideTopBar={true}
           msg={msg}

@@ -1,8 +1,14 @@
 {
   "compilerOptions": {
     "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "allowUnreachableCode": false,
+    "alwaysStrict": true,
+    "baseUrl": "./",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
+    "incremental": true,
+    "isolatedModules": true,
     "jsx": "react",
     "lib": ["DOM", "ES6"],
     "module": "CommonJS",
@@ -11,12 +17,25 @@
     "noImplicitReturns": true,
     "noImplicitThis": true,
     "outDir": "dist",
+
+    "paths": {
+      "@site/commands/*": ["src/commands/*"],
+      "@site/components/*": ["src/components/*"],
+      "@site/constants": ["src/constants"],
+      "@site/theme": ["src/theme"],
+      "@site/translations": ["src/translations"],
+      "@site/types": ["src/types"],
+      "@site/utils": ["src/utils"]
+    },
     "resolveJsonModule": true,
+    "skipLibCheck": true,
     "sourceMap": true,
     "strict": true,
+    "strictBindCallApply": false,
     "strictNullChecks": true,
+    "strictPropertyInitialization": false,
     "suppressImplicitAnyIndexErrors": true,
-    "target": "es5"
+    "target": "ES5"
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "src/**/*.test.*"]

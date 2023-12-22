@@ -1,3 +1,3 @@
-export { default as IEntity } from './IEntity';
-export { default as ILaser } from './ILaser';
-export { default as IThrust } from './IThrust';
+export type { default as IEntity } from './IEntity';
+export type { default as ILaser } from './ILaser';
+export type { default as IThrust } from './IThrust';
