@@ -1,21 +1,16 @@
 import autoprefixer from 'autoprefixer';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 import { resolve } from 'path';
-import { Configuration, DefinePlugin, LoaderOptionsPlugin } from 'webpack';
+import { Configuration, LoaderOptionsPlugin } from 'webpack';
 
 // constants
-import { DIST_PATH, SRC_PATH, APP_TITLE } from '../constants';
+import { DIST_PATH, SRC_PATH } from '../constants';
 
-interface IOption {
-  version: string;
-}
-
-export default function createCommonConfig({
-  version,
-}: IOption): Configuration {
-  const extensionPath: string = resolve(SRC_PATH, 'extension');
-
+export default function createCommonConfig(): Configuration {
   return {
+    entry: {
+      ['main']: resolve(SRC_PATH, 'index.ts'),
+    },
     module: {
       rules: [
         // templates
@@ -35,12 +30,6 @@ export default function createCommonConfig({
       ],
     },
 
-    output: {
-      clean: true,
-      filename: '[name].js',
-      path: DIST_PATH,
-    },
-
     plugins: [
       new CopyWebpackPlugin({
         patterns: [
@@ -49,10 +38,6 @@ export default function createCommonConfig({
             to: resolve(DIST_PATH, 'docs'),
           },
         ],
-      }),
-      new DefinePlugin({
-        __APP_TITLE__: JSON.stringify(APP_TITLE),
-        __VERSION__: JSON.stringify(version),
       }),
       new LoaderOptionsPlugin({
         options: {
@@ -63,14 +48,21 @@ export default function createCommonConfig({
 
     resolve: {
       alias: {
-        ['@site/components']: resolve(extensionPath, 'components'),
-        ['@site/commands']: resolve(extensionPath, 'commands'),
-        ['@site/constants']: resolve(extensionPath, 'constants'),
-        ['@site/descriptions']: resolve(extensionPath, 'descriptions'),
-        ['@site/theme']: resolve(extensionPath, 'theme'),
-        ['@site/utils']: resolve(extensionPath, 'utils'),
+        ['@site/components']: resolve(SRC_PATH, 'components'),
+        ['@site/commands']: resolve(SRC_PATH, 'commands'),
+        ['@site/constants']: resolve(SRC_PATH, 'constants'),
+        ['@site/descriptions']: resolve(SRC_PATH, 'descriptions'),
+        ['@site/theme']: resolve(SRC_PATH, 'theme'),
+        ['@site/translations']: resolve(SRC_PATH, 'translations'),
+        ['@site/types']: resolve(SRC_PATH, 'types'),
+        ['@site/utils']: resolve(SRC_PATH, 'utils'),
       },
       extensions: ['.js', '.ts', '.tsx'],
+    },
+
+    stats: {
+      assetsSpace: 100,
+      modules: false,
     },
   };
 }
