@@ -1,15 +1,24 @@
-<h1 p align="center">
+<h1 align="center">
   Kieran O'Neill (the website)
 </h1>
 
-<a href="https://kieranoneill.com" target="_blank">
-  <h3 p align="center">
-    https://kieranoneill.com
-  </h3>
-</a>
-
-<p p align="center">
+<p align="center">
   A website about me (Kieran O'Neill).
+</p>
+
+<p align="center">
+  <a href="https://github.com/kieranroneill/kieranroneill.com/releases/latest">
+    <img alt="GitHub release" src="https://img.shields.io/github/v/release/kieranroneill/kieranroneill.com?&logo=github">
+  </a>
+  <a href="https://github.com/kieranroneill/kieranroneill.com/releases/latest">
+    <img alt="GitHub Release Date - Published_At" src="https://img.shields.io/github/release-date/kieranroneill/kieranroneill.com?logo=github">
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/kieranroneill/kieranroneill.com/blob/main/LICENSE">
+    <img alt="GitHub License" src="https://img.shields.io/github/license/kieranroneill/kieranroneill.com">
+  </a>
 </p>
 
 #### Table of contents
