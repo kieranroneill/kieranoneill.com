@@ -21,6 +21,7 @@ const translation: IResourceLanguage = {
     help: 'Display this help and exit',
     link: 'Displays link',
     version: 'Print version information and quit',
+    web3Cv: 'Uses the Web3 version of my CV',
   },
 };
 

@@ -1,3 +1,3 @@
-export * from './Files';
+export * from './FilesNames';
 export * from './Links';
 export * from './Paths';

@@ -1,7 +1,7 @@
 import { Command } from '@kieranroneill/terminal-in-react';
 
 // constants
-import { CV_FILE, DOCS_PATH } from '@site/constants';
+import { CV_FILENAME, DOCS_PATH } from '@site/constants';
 import { CV_VERSION } from './constants';
 
 // types
@@ -14,6 +14,8 @@ export default function getCmd({ t }: IBaseCommandOptions): Command {
   const downloadOptionDescription: string = t('options.cvDownload');
   const helpOptionDescription: string = t('options.help');
   const versionOptionDescription: string = t('options.version');
+  const web3OptionDescription: string = t('options.web3Cv');
+  let file: string = `${CV_FILENAME.replace('${version}', CV_VERSION)}.pdf`;
 
   return {
     method: (args, print) => {
@@ -26,29 +28,31 @@ ${t('captions.arguments')}
   -d, --download  ${downloadOptionDescription}
   -h, --help      ${helpOptionDescription}
   -v, --version   ${versionOptionDescription}
+  --web3   ${web3OptionDescription}
 `);
 
         return;
       }
 
-      if (args.v || args.v) {
-        print(CV_VERSION);
+      if (args.web3) {
+        file = `${CV_FILENAME.replace('${version}', CV_VERSION)}-web3.pdf`;
+      }
+
+      if (args.v || args.version) {
+        print(`v${CV_VERSION}`);
 
         return;
       }
 
       if (args.d || args.download) {
-        downloadFile(DOCS_PATH, CV_FILE.replace('${version}', CV_VERSION));
+        downloadFile(DOCS_PATH, file);
 
         print(t('captions.cvDownloaded'));
 
         return;
       }
 
-      window.open(
-        `${DOCS_PATH}/${CV_FILE.replace('${version}', CV_VERSION)}`,
-        '_blank'
-      );
+      window.open(`${DOCS_PATH}/${file}`, '_blank');
 
       return;
     },
@@ -66,6 +70,11 @@ ${t('captions.arguments')}
       {
         name: 'version',
         description: versionOptionDescription,
+        defaultValue: false,
+      },
+      {
+        name: 'web3',
+        description: web3OptionDescription,
         defaultValue: false,
       },
     ],
