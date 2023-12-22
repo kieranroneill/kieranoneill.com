@@ -5,7 +5,7 @@ import { Configuration as DevelopmentConfiguration } from 'webpack-dev-server';
 import { merge } from 'webpack-merge';
 
 // config
-import commonConfig from './webpack.common.config';
+import { version } from '../package.json';
 
 // constants
 import {
@@ -16,11 +16,14 @@ import {
   APP_TITLE,
 } from './constants';
 
+// utils
+import { createCommonConfig } from './utils';
+
 const configs: (Configuration | DevelopmentConfiguration)[] = [
   /**
    * development
    */
-  merge(commonConfig, {
+  merge(createCommonConfig({ version }), {
     devtool: 'cheap-module-source-map',
 
     devServer: {
@@ -82,7 +85,7 @@ const configs: (Configuration | DevelopmentConfiguration)[] = [
   /**
    * production
    */
-  merge(commonConfig, {
+  merge(createCommonConfig({ version }), {
     mode: 'production',
 
     module: {
