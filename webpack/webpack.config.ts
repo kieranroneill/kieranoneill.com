@@ -85,7 +85,7 @@ const config: (
     case EnvironmentEnum.Development:
     default:
       devServer = {
-        port: 1337,
+        port: 8080,
         watchFiles: [`${SRC_PATH}/**/*`],
       };
       devtool = 'cheap-module-source-map';
