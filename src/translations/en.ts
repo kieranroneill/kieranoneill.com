@@ -14,7 +14,7 @@ const translation: IResourceLanguage = {
     cvDownloaded: 'You have downloaded my CV, prepare to be entertained!',
     description: 'Mashing the keyboard until the code works',
     welcome1:
-      'This is te mobile version of my website where you will find my CV and social links.',
+      'This is the mobile version of my website where you will find my CV and social links.',
     welcome2:
       'Be sure to check out my website on a desktop or laptop, as you may find some tasty treats!',
   },
