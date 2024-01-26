@@ -270,6 +270,11 @@ fabric.properties
 
 ### Miscellaneous
 
+# docusaurus
+.docusaurus
+.cache-loader
+/build
+
 # dependencies
 .npmrc
 /.pnp

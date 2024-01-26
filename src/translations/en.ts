@@ -1,7 +1,4 @@
-// types
-import { IResourceLanguage } from '@site/types';
-
-const translation: IResourceLanguage = {
+const translation: Record<string, unknown> = {
   buttons: {
     downloadCv: 'Download CV',
     github: 'GitHub',

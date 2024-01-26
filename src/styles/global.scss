@@ -1,0 +1,45 @@
+:root {
+  // custom
+  --custom-background-accent-color: #303846;
+  --custom-background-primary-color: #282A36;
+  --custom-primary-color-50: #ffdcb8;
+  --custom-primary-color-100: #ffd5aa;
+  --custom-primary-color-200: #ffce9b;
+  --custom-primary-color-300: #ffc78c;
+  --custom-primary-color-400: #ffbf7c;
+  --custom-primary-color-500: #ffb86c;
+  --custom-primary-color-600: #dea05d;
+  --custom-primary-color-700: #be884e;
+  --custom-primary-color-800: #9e7140;
+  --custom-primary-color-900: #805b32;
+  --custom-sub-text-color: #6272A4;
+  --custom-text-color: #F8F8F2;
+
+  // overrides
+  --ifm-color-content: var(--custom-text-color);
+  --ifm-code-font-size: 95%;
+  --ifm-font-family-base: "Montserrat", sans-serif;
+  --ifm-heading-font-family: "Montserrat", sans-serif;
+  --ifm-navbar-background-color: var(--custom-background-primary-color);
+  --ifm-navbar-link-color: var(--custom-text-color);
+}
+
+[data-theme="dark"] {
+  // overrides - dark theme
+  --ifm-color-primary: var(--custom-primary-color-500);
+  --ifm-color-primary-dark: var(--custom-primary-color-600);
+  --ifm-color-primary-darker: var(--custom-primary-color-700);
+  --ifm-color-primary-darkest: var(--custom-primary-color-800);
+  --ifm-color-primary-light: var(--custom-primary-color-400);
+  --ifm-color-primary-lighter: var(--custom-primary-color-300);
+  --ifm-color-primary-lightest: var(--custom-primary-color-200);
+}
+
+/* overrides */
+.footer {
+  &__link-item {
+    &:hover {
+      color: var(--custom-primary-color-500);
+    }
+  }
+}
